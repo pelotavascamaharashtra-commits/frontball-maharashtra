@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pelota Vasca Sport Association of Maharashtra — Frontball</title>
+  <meta name="description" content="Official website of Pelota Vasca Sport Association of Maharashtra. Frontball — Speed, Skill and Spirit." />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Inter', sans-serif; background: #fff; color: #1a1a2e; }
+    a { text-decoration: none; }
+    img { display: block; }
+
+    /* NAV */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      background: rgba(26,26,46,0.97); backdrop-filter: blur(10px);
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 5%; height: 68px;
+    }
+    .nav-logo { display: flex; align-items: center; gap: 12px; }
+    .nav-logo img { width: 44px; height: 44px; border-radius: 50%; object-fit: cover; }
+    .nav-logo-text { color: #fff; font-weight: 900; font-size: 15px; line-height: 1.2; }
+    .nav-logo-sub { color: #f39c12; font-size: 11px; }
+    .nav-links { display: flex; gap: 28px; }
+    .nav-links a { color: #ccc; font-size: 13px; font-weight: 600; transition: color .2s; }
+    .nav-links a:hover { color: #f39c12; }
+    .nav-btn {
+      background: #25D366; color: #fff; padding: 9px 20px;
+      border-radius: 50px; font-size: 13px; font-weight: 700;
+      transition: background .2s; white-space: nowrap;
+    }
+    .nav-btn:hover { background: #1ebe5d; }
+    @media(max-width:700px){ .nav-links{display:none;} }
+
+    /* HERO */
+    .hero {
+      min-height: 100vh; padding-top: 68px;
+      position: relative; overflow: hidden;
+      display: flex; align-items: center; justify-content: center; text-align: center;
+      padding-left: 5%; padding-right: 5%;
+    }
+    .hero-bg {
+      position: absolute; inset: 0; z-index: 0;
+    }
+    .hero-bg img {
+      width: 100%; height: 100%; object-fit: cover;
+    }
+    .hero-overlay {
+      position: absolute; inset: 0; z-index: 1;
+      background: linear-gradient(135deg, rgba(26,26,46,0.88) 0%, rgba(15,52,96,0.82) 100%);
+    }
+    .hero-content { position: relative; z-index: 2; }
+    .hero-badge {
+      display: inline-block; background: rgba(192,57,43,0.25);
+      border: 1px solid rgba(192,57,43,0.6); color: #f39c12;
+      padding: 6px 20px; border-radius: 50px; font-size: 12px; font-weight: 700;
+      letter-spacing: 2px; text-transform: uppercase; margin-bottom: 24px;
+    }
+    .hero h1 {
+      font-size: clamp(30px, 6vw, 68px); font-weight: 900; color: #fff; line-height: 1.1;
+      margin-bottom: 16px;
+    }
+    .hero h1 span { color: #e74c3c; }
+    .hero-sub {
+      font-size: clamp(14px, 2vw, 19px); color: rgba(255,255,255,0.75);
+      max-width: 540px; margin: 0 auto 36px; line-height: 1.6;
+    }
+    .hero-btns { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+    .btn-red {
+      background: #c0392b; color: #fff; padding: 14px 32px;
+      border-radius: 50px; font-weight: 700; font-size: 15px;
+      transition: background .2s; display: inline-block;
+    }
+    .btn-red:hover { background: #e74c3c; }
+    .btn-wa {
+      background: #25D366; color: #fff; padding: 14px 32px;
+      border-radius: 50px; font-weight: 700; font-size: 15px;
+      transition: background .2s; display: inline-block;
+    }
+    .btn-wa:hover { background: #1ebe5d; }
+    .hero-stats {
+      display: flex; gap: 40px; justify-content: center; flex-wrap: wrap;
+      margin-top: 56px;
+    }
+    .hero-stat { text-align: center; }
+    .hero-stat-num { font-size: 32px; font-weight: 900; color: #c0392b; }
+    .hero-stat-label { font-size: 11px; color: rgba(255,255,255,0.5); text-transform: uppercase; letter-spacing: 1px; margin-top: 2px; }
+
+    /* SECTIONS */
+    section { padding: 80px 5%; }
+    .section-inner { max-width: 1200px; margin: 0 auto; }
+    .section-tag {
+      display: inline-block; background: rgba(192,57,43,0.1);
+      border: 1px solid rgba(192,57,43,0.3); color: #c0392b;
+      padding: 4px 14px; border-radius: 50px; font-size: 11px;
+      font-weight: 700; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 12px;
+    }
+    h2.section-title {
+      font-size: clamp(26px, 4vw, 42px); font-weight: 900; color: #1a1a2e; margin-bottom: 8px;
+    }
+    .section-sub { color: #666; font-size: 15px; max-width: 540px; margin-bottom: 48px; line-height: 1.6; }
+
+    /* ABOUT */
+    .about-bg { background: #f8f9fa; }
+    .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+    @media(max-width:768px){ .about-grid { grid-template-columns: 1fr; } }
+    .about-card {
+      background: #fff; border-radius: 16px; padding: 20px 22px;
+      box-shadow: 0 2px 16px rgba(0,0,0,0.06); margin-bottom: 14px;
+      display: flex; align-items: flex-start; gap: 14px;
+    }
+    .about-card-icon {
+      width: 42px; height: 42px; border-radius: 10px;
+      background: rgba(192,57,43,0.1); display: flex; align-items: center;
+      justify-content: center; font-size: 20px; flex-shrink: 0;
+    }
+    .about-card h4 { font-weight: 700; font-size: 14px; margin-bottom: 3px; }
+    .about-card p { color: #666; font-size: 13px; line-height: 1.5; }
+    .about-img-box {
+      background: linear-gradient(135deg, #1a1a2e, #0f3460);
+      border-radius: 24px; overflow: hidden; position: relative;
+    }
+    .about-img-box img { width: 100%; height: 300px; object-fit: cover; opacity: 0.7; }
+    .about-img-overlay {
+      position: absolute; bottom: 0; left: 0; right: 0; padding: 28px;
+      background: linear-gradient(transparent, rgba(0,0,0,0.85));
+      color: #fff;
+    }
+    .about-img-overlay h3 { font-size: 20px; font-weight: 900; margin-bottom: 4px; }
+    .about-img-overlay p { font-size: 13px; color: rgba(255,255,255,0.7); }
+
+    /* DISCIPLINES */
+    .disc-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; }
+    .disc-card {
+      border-radius: 20px; overflow: hidden;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.08); transition: transform .25s;
+    }
+    .disc-card:hover { transform: translateY(-6px); }
+    .disc-top {
+      background: linear-gradient(135deg, #1a1a2e, #16213e);
+      padding: 30px 26px 22px; color: #fff;
+    }
+    .disc-emoji { font-size: 38px; margin-bottom: 12px; }
+    .disc-top h3 { font-size: 20px; font-weight: 900; margin-bottom: 4px; }
+    .disc-top p { color: rgba(255,255,255,0.6); font-size: 13px; }
+    .disc-bottom { background: #fff; padding: 18px 26px; }
+    .disc-bottom ul { list-style: none; }
+    .disc-bottom li { padding: 6px 0; font-size: 13px; color: #555; border-bottom: 1px solid #f0f0f0; }
+    .disc-bottom li:last-child { border-bottom: none; }
+    .disc-badge {
+      display: inline-block; background: rgba(192,57,43,0.1);
+      color: #c0392b; padding: 3px 10px; border-radius: 50px;
+      font-size: 11px; font-weight: 700; margin-top: 12px;
+    }
+
+    /* EVENTS */
+    .events-bg { background: #f8f9fa; }
+    .events-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; }
+    .event-card {
+      background: #fff; border-radius: 20px; overflow: hidden;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.07); transition: transform .25s;
+    }
+    .event-card:hover { transform: translateY(-4px); }
+    .event-header { padding: 26px; color: #fff; }
+    .event-badge {
+      display: inline-block; background: rgba(255,255,255,0.2);
+      padding: 3px 12px; border-radius: 50px; font-size: 11px; font-weight: 700;
+      margin-bottom: 10px;
+    }
+    .event-header h3 { font-size: 18px; font-weight: 900; margin-bottom: 4px; }
+    .event-header p { font-size: 13px; opacity: .8; }
+    .event-body { padding: 18px 26px; }
+    .event-row { display: flex; justify-content: space-between; font-size: 13px; padding: 7px 0; border-bottom: 1px solid #f5f5f5; gap: 10px; }
+    .event-row:last-child { border-bottom: none; }
+    .event-row-label { color: #888; white-space: nowrap; }
+    .event-row-val { font-weight: 600; text-align: right; }
+
+    /* GALLERY */
+    .gallery-bg { background: #1a1a2e; }
+    .gallery-bg .section-tag { background: rgba(192,57,43,0.2); border-color: rgba(192,57,43,0.4); }
+    .gallery-bg h2.section-title { color: #fff; }
+    .gallery-bg .section-sub { color: rgba(255,255,255,0.55); }
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+    }
+    @media(min-width:768px){
+      .gallery-grid { grid-template-columns: repeat(4, 1fr); }
+      .gallery-item:first-child { grid-column: span 2; }
+    }
+    .gallery-item {
+      border-radius: 16px; overflow: hidden; position: relative;
+      aspect-ratio: 4/3; cursor: pointer;
+    }
+    .gallery-item img {
+      width: 100%; height: 100%; object-fit: cover;
+      transition: transform .4s;
+    }
+    .gallery-item:hover img { transform: scale(1.06); }
+    .gallery-item-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(transparent 50%, rgba(0,0,0,0.75));
+      display: flex; align-items: flex-end; padding: 16px;
+      opacity: 0; transition: opacity .3s;
+    }
+    .gallery-item:hover .gallery-item-overlay { opacity: 1; }
+    .gallery-item-overlay span { color: #fff; font-size: 13px; font-weight: 600; }
+
+    /* COMMITTEE */
+    .committee-bg { background: linear-gradient(135deg, #16213e 0%, #0f3460 100%); }
+    .committee-bg .section-tag { background: rgba(192,57,43,0.2); border-color: rgba(192,57,43,0.4); }
+    .committee-bg h2.section-title { color: #fff; }
+    .committee-bg .section-sub { color: rgba(255,255,255,0.6); }
+    .exec-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 18px; margin-bottom: 44px; }
+    .exec-card {
+      background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 18px; padding: 26px 18px; text-align: center;
+      transition: background .2s;
+    }
+    .exec-card:hover { background: rgba(255,255,255,0.13); }
+    .avatar {
+      width: 68px; height: 68px; border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 24px; font-weight: 900; color: #fff;
+      margin: 0 auto 12px;
+    }
+    .exec-card h4 { color: #fff; font-size: 14px; font-weight: 700; margin-bottom: 6px; }
+    .exec-card .role {
+      display: inline-block; padding: 3px 12px; border-radius: 50px;
+      font-size: 11px; font-weight: 700;
+    }
+    .members-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 14px; }
+    .member-card {
+      background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 14px; padding: 16px 12px; text-align: center;
+      transition: background .2s;
+    }
+    .member-card:hover { background: rgba(255,255,255,0.1); }
+    .member-avatar {
+      width: 48px; height: 48px; border-radius: 50%;
+      background: rgba(192,57,43,0.2); border: 2px solid rgba(192,57,43,0.4);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 17px; font-weight: 900; color: #e74c3c; margin: 0 auto 10px;
+    }
+    .member-card h4 { color: #fff; font-size: 13px; font-weight: 600; margin-bottom: 3px; }
+    .member-card p { color: rgba(255,255,255,0.4); font-size: 11px; }
+    .committee-divider {
+      font-size: 11px; font-weight: 700; letter-spacing: 3px;
+      text-transform: uppercase; color: rgba(255,255,255,0.35);
+      margin-bottom: 18px; padding-bottom: 12px;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+
+    /* FOOTER */
+    footer { background: #0d0d1a; color: #fff; padding: 60px 5% 28px; }
+    .footer-inner { max-width: 1200px; margin: 0 auto; }
+    .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 40px; margin-bottom: 44px; }
+    .footer-logo { display: flex; align-items: center; gap: 10px; margin-bottom: 14px; }
+    .footer-logo img { width: 40px; height: 40px; border-radius: 50%; object-fit: cover; }
+    .footer-logo-text { font-weight: 900; font-size: 15px; }
+    .footer-logo-sub { font-size: 11px; color: #f39c12; }
+    footer h4 { font-size: 11px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: #f39c12; margin-bottom: 16px; }
+    footer p, footer a { color: #999; font-size: 14px; line-height: 1.8; }
+    footer a:hover { color: #fff; }
+    .wa-btn {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: #25D366; color: #fff !important; padding: 10px 20px;
+      border-radius: 50px; font-size: 13px; font-weight: 700;
+      margin-top: 12px; transition: background .2s;
+    }
+    .wa-btn:hover { background: #1ebe5d; }
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,0.07);
+      padding-top: 22px; display: flex;
+      justify-content: space-between; flex-wrap: wrap; gap: 10px;
+    }
+    .footer-bottom p { color: #444; font-size: 12px; }
+
+    /* LIGHTBOX */
+    .lightbox {
+      display: none; position: fixed; inset: 0; z-index: 999;
+      background: rgba(0,0,0,0.92); align-items: center; justify-content: center;
+    }
+    .lightbox.open { display: flex; }
+    .lightbox img { max-width: 90vw; max-height: 90vh; border-radius: 12px; object-fit: contain; }
+    .lightbox-close {
+      position: fixed; top: 20px; right: 28px;
+      color: #fff; font-size: 36px; cursor: pointer; font-weight: 300; line-height: 1;
+    }
+  </style>
+</head>
+<body>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox" onclick="closeLightbox()">
+  <span class="lightbox-close">&times;</span>
+  <img id="lightbox-img" src="" alt="Gallery photo" />
+</div>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">
+    <img src="logo.png" alt="PVSAM Logo" />
+    <div>
+      <div class="nav-logo-text">PVSAM</div>
+      <div class="nav-logo-sub">Frontball Maharashtra</div>
+    </div>
+  </div>
+  <div class="nav-links">
+    <a href="#about">About</a>
+    <a href="#disciplines">Disciplines</a>
+    <a href="#events">Events</a>
+    <a href="#gallery">Gallery</a>
+    <a href="#committee">Committee</a>
+    <a href="#contact">Contact</a>
+  </div>
+  <a href="https://wa.me/917057856868?text=Hello%20PVSAM%20Frontball" target="_blank" class="nav-btn">💬 WhatsApp</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-bg">
+    <img src="hero-action.png" alt="Frontball action" />
+  </div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <div class="hero-badge">🏆 Official Maharashtra Association</div>
+    <h1>Pelota Vasca<br><span>Maharashtra</span></h1>
+    <p class="hero-sub">Frontball — Speed, Skill and Spirit.<br>Bringing the excitement of Frontball to Maharashtra.</p>
+    <div class="hero-btns">
+      <a href="#committee" class="btn-red">Meet Our Team</a>
+      <a href="https://wa.me/917057856868?text=Hello%20PVSAM%20Frontball" target="_blank" class="btn-wa">💬 WhatsApp Us</a>
+    </div>
+    <div class="hero-stats">
+      <div class="hero-stat">
+        <div class="hero-stat-num">13</div>
+        <div class="hero-stat-label">Committee Members</div>
+      </div>
+      <div class="hero-stat">
+        <div class="hero-stat-num">3</div>
+        <div class="hero-stat-label">Disciplines</div>
+      </div>
+      <div class="hero-stat">
+        <div class="hero-stat-num">2023</div>
+        <div class="hero-stat-label">Founded</div>
+      </div>
+      <div class="hero-stat">
+        <div class="hero-stat-num">MH</div>
+        <div class="hero-stat-label">Maharashtra</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about" class="about-bg">
+  <div class="section-inner">
+    <div class="about-grid">
+      <div>
+        <div class="section-tag">About Us</div>
+        <h2 class="section-title">What is Frontball?</h2>
+        <p class="section-sub">Frontball is a modern racquet sport governed internationally by FIPV, played with high speed and precision against a front wall.</p>
+        <div class="about-card">
+          <div class="about-card-icon">🏛️</div>
+          <div>
+            <h4>Maharashtra Association</h4>
+            <p>Pelota Vasca Sport Association of Maharashtra — promoting Frontball across the state since 2023.</p>
+          </div>
+        </div>
+        <div class="about-card">
+          <div class="about-card-icon">🌍</div>
+          <div>
+            <h4>FIPV Affiliated</h4>
+            <p>Affiliated with the International Federation of Basque Pelota (FIPV), the global governing body for Frontball.</p>
+          </div>
+        </div>
+        <div class="about-card">
+          <div class="about-card-icon">📍</div>
+          <div>
+            <h4>Based in Kolhapur</h4>
+            <p>2266, Shivneri Colony, Nagaon, Tal. Hatkanangle, Dist. Kolhapur, Maharashtra.</p>
+          </div>
+        </div>
+      </div>
+      <div class="about-img-box">
+        <img src="gallery-1.png" alt="Frontball match" />
+        <div class="about-img-overlay">
+          <div>
+            <h3>Maharashtra Frontball</h3>
+            <p>Competitive play across all formats — Individual, Doubles &amp; Mixed</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DISCIPLINES -->
+<section id="disciplines">
+  <div class="section-inner">
+    <div class="section-tag">Disciplines</div>
+    <h2 class="section-title">Frontball Categories</h2>
+    <p class="section-sub">Frontball is played in three exciting formats under FIPV international rules.</p>
+    <div class="disc-grid">
+      <div class="disc-card">
+        <div class="disc-top">
+          <div class="disc-emoji">🏃</div>
+          <h3>Individual</h3>
+          <p>One vs One — the purest test of skill</p>
+        </div>
+        <div class="disc-bottom">
+          <ul>
+            <li>⚡ Fastest format of the game</li>
+            <li>🎯 Full court coverage required</li>
+            <li>🏆 Featured in World Championships</li>
+            <li>👟 Men's &amp; Women's categories</li>
+          </ul>
+          <span class="disc-badge">FIPV Official</span>
+        </div>
+      </div>
+      <div class="disc-card">
+        <div class="disc-top" style="background:linear-gradient(135deg,#c0392b,#922b21);">
+          <div class="disc-emoji">👥</div>
+          <h3>Doubles</h3>
+          <p>Two vs Two — teamwork and strategy</p>
+        </div>
+        <div class="disc-bottom">
+          <ul>
+            <li>🤝 Team coordination essential</li>
+            <li>🎯 Shared court coverage</li>
+            <li>🏆 Most popular format</li>
+            <li>👟 Men's &amp; Women's categories</li>
+          </ul>
+          <span class="disc-badge" style="background:rgba(192,57,43,0.1);color:#c0392b;">FIPV Official</span>
+        </div>
+      </div>
+      <div class="disc-card">
+        <div class="disc-top" style="background:linear-gradient(135deg,#f39c12,#d68910);">
+          <div class="disc-emoji">🤝</div>
+          <h3>Mixed Doubles</h3>
+          <p>Mixed gender pairs — inclusive sport</p>
+        </div>
+        <div class="disc-bottom">
+          <ul>
+            <li>♀️♂️ Mixed gender teams</li>
+            <li>🎯 Strategic play style</li>
+            <li>🏆 Growing format worldwide</li>
+            <li>🌟 Inclusive &amp; exciting</li>
+          </ul>
+          <span class="disc-badge" style="background:rgba(243,156,18,0.1);color:#d68910;">FIPV Official</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EVENTS -->
+<section id="events" class="events-bg">
+  <div class="section-inner">
+    <div class="section-tag">Events</div>
+    <h2 class="section-title">Upcoming Events 2025</h2>
+    <p class="section-sub">Join us at our upcoming Frontball tournaments and championships across Maharashtra.</p>
+    <div class="events-grid">
+      <div class="event-card">
+        <div class="event-header" style="background:linear-gradient(135deg,#c0392b,#e74c3c);">
+          <span class="event-badge">🏆 Championship</span>
+          <h3>Maharashtra State Frontball Championship 2025</h3>
+          <p>State-level competition — all districts welcome</p>
+        </div>
+        <div class="event-body">
+          <div class="event-row"><span class="event-row-label">📅 Date</span><span class="event-row-val">To be announced</span></div>
+          <div class="event-row"><span class="event-row-label">📍 Venue</span><span class="event-row-val">Maharashtra</span></div>
+          <div class="event-row"><span class="event-row-label">🎯 Categories</span><span class="event-row-val">Individual, Doubles, Mixed</span></div>
+          <div class="event-row"><span class="event-row-label">📞 Register</span><span class="event-row-val">+91 70578 56868</span></div>
+        </div>
+      </div>
+      <div class="event-card">
+        <div class="event-header" style="background:linear-gradient(135deg,#f39c12,#d68910);">
+          <span class="event-badge">🌱 Training</span>
+          <h3>Frontball Training Camp — Kolhapur</h3>
+          <p>Open for beginners and intermediate players</p>
+        </div>
+        <div class="event-body">
+          <div class="event-row"><span class="event-row-label">📅 Date</span><span class="event-row-val">Coming soon</span></div>
+          <div class="event-row"><span class="event-row-label">📍 Venue</span><span class="event-row-val">Kolhapur, Maharashtra</span></div>
+          <div class="event-row"><span class="event-row-label">🎯 Level</span><span class="event-row-val">All levels welcome</span></div>
+          <div class="event-row"><span class="event-row-label">📞 Info</span><span class="event-row-val">WhatsApp to register</span></div>
+        </div>
+      </div>
+      <div class="event-card">
+        <div class="event-header" style="background:linear-gradient(135deg,#1a1a2e,#16213e);">
+          <span class="event-badge">🏅 District Level</span>
+          <h3>District Selection Trials 2025</h3>
+          <p>Select players to represent districts at State level</p>
+        </div>
+        <div class="event-body">
+          <div class="event-row"><span class="event-row-label">📅 Date</span><span class="event-row-val">To be announced</span></div>
+          <div class="event-row"><span class="event-row-label">📍 Venue</span><span class="event-row-val">Multiple districts</span></div>
+          <div class="event-row"><span class="event-row-label">🎯 Format</span><span class="event-row-val">All disciplines</span></div>
+          <div class="event-row"><span class="event-row-label">📞 Contact</span><span class="event-row-val">+91 70578 56868</span></div>
+        </div>
+      </div>
+    </div>
+    <div style="text-align:center;margin-top:36px;">
+      <a href="https://wa.me/917057856868?text=I%20want%20to%20register%20for%20Frontball%20event" target="_blank"
+        style="display:inline-flex;align-items:center;gap:8px;background:#25D366;color:#fff;padding:14px 34px;border-radius:50px;font-weight:700;font-size:15px;">
+        💬 Register via WhatsApp
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section id="gallery" class="gallery-bg">
+  <div class="section-inner">
+    <div class="section-tag">Photo Gallery</div>
+    <h2 class="section-title" style="color:#fff;">Moments in Motion</h2>
+    <p class="section-sub">Action shots, tournaments, and team moments from Maharashtra Frontball.</p>
+    <div class="gallery-grid">
+      <div class="gallery-item" onclick="openLightbox('hero-action.png','Frontball Player Action')">
+        <img src="hero-action.png" alt="Frontball action" />
+        <div class="gallery-item-overlay"><span>🏃 Player Action Shot</span></div>
+      </div>
+      <div class="gallery-item" onclick="openLightbox('gallery-1.png','Doubles Match')">
+        <img src="gallery-1.png" alt="Doubles match" />
+        <div class="gallery-item-overlay"><span>👥 Doubles Match</span></div>
+      </div>
+      <div class="gallery-item" onclick="openLightbox('gallery-2.png','Award Ceremony')">
+        <img src="gallery-2.png" alt="Award ceremony" />
+        <div class="gallery-item-overlay"><span>🏅 Award Ceremony</span></div>
+      </div>
+      <div class="gallery-item" onclick="openLightbox('gallery-3.png','Team Photo')">
+        <img src="gallery-3.png" alt="Team photo" />
+        <div class="gallery-item-overlay"><span>📸 Team Photo</span></div>
+      </div>
+      <div class="gallery-item" onclick="openLightbox('gallery-4.png','Serve Action')">
+        <img src="gallery-4.png" alt="Serve action" />
+        <div class="gallery-item-overlay"><span>⚡ Serve Action</span></div>
+      </div>
+    </div>
+    <p style="text-align:center;margin-top:28px;color:rgba(255,255,255,0.35);font-size:13px;">
+      More photos added as events happen · Click any photo to enlarge
+    </p>
+  </div>
+</section>
+
+<!-- COMMITTEE -->
+<section id="committee" class="committee-bg">
+  <div class="section-inner">
+    <div class="section-tag">Our Team</div>
+    <h2 class="section-title">Executive Committee</h2>
+    <p class="section-sub">Meet the dedicated team leading Frontball in Maharashtra.</p>
+    <div class="exec-grid">
+      <div class="exec-card">
+        <div class="avatar" style="background:linear-gradient(135deg,#c0392b,#922b21);">B</div>
+        <div class="role" style="background:rgba(192,57,43,0.2);color:#e74c3c;">President</div>
+        <h4>Balasaheb Sarnaik</h4>
+      </div>
+      <div class="exec-card">
+        <div class="avatar" style="background:linear-gradient(135deg,#f39c12,#d68910);">S</div>
+        <div class="role" style="background:rgba(243,156,18,0.2);color:#f39c12;">Vice President</div>
+        <h4>Sanskruti Gharat</h4>
+      </div>
+      <div class="exec-card">
+        <div class="avatar" style="background:linear-gradient(135deg,#27ae60,#1e8449);">M</div>
+        <div class="role" style="background:rgba(39,174,96,0.2);color:#27ae60;">Secretary</div>
+        <h4>Mahesh Rathod</h4>
+      </div>
+      <div class="exec-card">
+        <div class="avatar" style="background:linear-gradient(135deg,#2980b9,#1a5276);">A</div>
+        <div class="role" style="background:rgba(41,128,185,0.2);color:#3498db;">Joint Secretary</div>
+        <h4>Ajaykumar Sarvoday</h4>
+      </div>
+      <div class="exec-card">
+        <div class="avatar" style="background:linear-gradient(135deg,#8e44ad,#6c3483);">P</div>
+        <div class="role" style="background:rgba(142,68,173,0.2);color:#9b59b6;">Treasurer</div>
+        <h4>Priyanka Bhise</h4>
+      </div>
+    </div>
+    <div class="committee-divider">Committee Members</div>
+    <div class="members-grid">
+      <div class="member-card"><div class="member-avatar">M</div><h4>Mahesh Anandkar</h4><p>Member</p></div>
+      <div class="member-card"><div class="member-avatar">S</div><h4>Sandesh Bhojkar</h4><p>Member</p></div>
+      <div class="member-card"><div class="member-avatar">S</div><h4>Somesh Sanadi</h4><p>Member</p></div>
+      <div class="member-card"><div class="member-avatar">M</div><h4>Mehboob Ansari</h4><p>Member</p></div>
+      <div class="member-card"><div class="member-avatar">P</div><h4>Pranav Tare</h4><p>Member</p></div>
+      <div class="member-card"><div class="member-avatar">P</div><h4>Pravinsinh Koli</h4><p>Member</p></div>
+      <div class="member-card"><div class="member-avatar">S</div><h4>Sahil Gurjar</h4><p>Member</p></div>
+      <div class="member-card"><div class="member-avatar">S</div><h4>Swapnil Adurkar</h4><p>Member</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER / CONTACT -->
+<footer id="contact">
+  <div class="footer-inner">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-logo">
+          <img src="logo.png" alt="PVSAM Logo" />
+          <div>
+            <div class="footer-logo-text">PVSAM</div>
+            <div class="footer-logo-sub">Frontball</div>
+          </div>
+        </div>
+        <p>Speed, Skill and Spirit — Maharashtra Frontball. Affiliated with FIPV International Federation of Basque Pelota.</p>
+      </div>
+      <div>
+        <h4>Contact Us</h4>
+        <p>📞 +91 70578 56868</p>
+        <p>📍 2266, Shivneri Colony, Nagaon,<br>Tal. Hatkanangle, Dist. Kolhapur,<br>Maharashtra</p>
+        <a href="https://wa.me/917057856868?text=Hello%20PVSAM%20Frontball" target="_blank" class="wa-btn">
+          💬 WhatsApp Us
+        </a>
+      </div>
+      <div>
+        <h4>Official Body</h4>
+        <p>Frontball is governed internationally by the <strong style="color:#fff;">International Federation of Basque Pelota (FIPV)</strong>.</p>
+        <br/>
+        <a href="https://www.fipv.net/en/frontball" target="_blank" style="color:#c0392b;font-weight:700;">Visit FIPV Website →</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 Pelota Vasca Sport Association of Maharashtra. All rights reserved.</p>
+      <p>Affiliated with FIPV — International Federation of Basque Pelota</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+  function openLightbox(src, alt) {
+    document.getElementById('lightbox-img').src = src;
+    document.getElementById('lightbox-img').alt = alt;
+    document.getElementById('lightbox').classList.add('open');
+  }
+  function closeLightbox() {
+    document.getElementById('lightbox').classList.remove('open');
+  }
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') closeLightbox();
+  });
+</script>
+</body>
+</html>
