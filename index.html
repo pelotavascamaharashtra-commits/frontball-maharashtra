@@ -33,20 +33,19 @@
     }
     .nav-btn:hover { background: #1ebe5d; }
     @media(max-width:700px){ .nav-links{display:none;} }
-    .nav-btn-instagram {
-    background: #E1306C;
-    color: #fff;
-    padding: 9px 20px;
-    border-radius: 50px;
-    font-size: 13px;
-    font-weight: 700;
-    text-decoration: none;
-    transition: background .2s;
-    white-space: nowrap;
+    .nav-btn-instagram{
+    background: linear-gradient(45deg,#F58529,#DD2A7B,#8134AF,#515BD4);
+    color:#fff;
+    padding:9px 20px;
+    border-radius:50px;
+    font-size:13px;
+    font-weight:700;
+    transition:.3s;
+    white-space:nowrap;
 }
 
-.nav-btn-instagram:hover {
-    background: #C13584;
+.nav-btn-instagram:hover{
+    opacity:.9;
 }
 
     /* HERO */
@@ -272,7 +271,24 @@
     /* FOOTER */
     footer { background: #0d0d1a; color: #fff; padding: 60px 5% 28px; }
     .footer-inner { max-width: 1200px; margin: 0 auto; }
-    .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 40px; margin-bottom: 44px; }
+    .footer-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:35px;
+    margin-bottom:44px;
+}
+
+@media(max-width:992px){
+    .footer-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+}
+
+@media(max-width:600px){
+    .footer-grid{
+        grid-template-columns:1fr;
+    }
+}
     .footer-logo { display: flex; align-items: center; gap: 10px; margin-bottom: 14px; }
     .footer-logo img { width: 40px; height: 40px; border-radius: 50%; object-fit: cover; }
     .footer-logo-text { font-weight: 900; font-size: 15px; }
@@ -333,7 +349,11 @@
     <a href="#contact">Contact</a>
   </div>
   <a href="https://wa.me/917057856868?text=Hello%20PVSAM%20Frontball" target="_blank" class="nav-btn">💬 WhatsApp</a>
-  <a href="https://www.instagram.com/pelotavasca_maharashtra?igsh=MWdndzd4OWZpMjY5OQ==" target="_blank" class="nav-btn">Instagram</a>
+  <a href="https://www.instagram.com/pelotavasca_maharashtra?igsh=MWdndzd4OWZpMjY5OQ=="
+   target="_blank"
+   class="nav-btn-instagram">
+   📷 Instagram
+</a>
 </nav>
 
 <!-- HERO -->
@@ -632,16 +652,41 @@
         </a>
       </div>
       <div>
-        <h4>Official Body</h4>
-        <p>Frontball is governed internationally by the <strong style="color:#fff;">International Federation of Basque Pelota (FIPV)</strong>.</p>
-        <br/>
-        <a href="https://www.fipv.net/en/frontball" target="_blank" style="color:#c0392b;font-weight:700;">Visit FIPV Website →</a>
-      </div>
-        <h4>International Olympic Committee</h4>
-        <p>International Federation of Pelota Vasca (FIPV) full recognition by the <strong style="color:#fff;">International Olympic Committee (IOC)</strong>.</p>
-        <br/>
-        <a href="https://www.olympics.com/ioc/recognised-international-federations/international-federation-of-pelota-vasca" target="_blank" style="color:#c0392b;font-weight:700;">Visit IOC Website →</a>
-      </div>
+    <h4>Official Body</h4>
+    <p>
+        Frontball is governed internationally by the
+        <strong style="color:#fff;">
+            International Federation of Basque Pelota (FIPV)
+        </strong>.
+    </p>
+
+    <br>
+
+    <a href="https://www.fipv.net/en/frontball"
+       target="_blank"
+       style="color:#c0392b;font-weight:700;">
+       Visit FIPV Website →
+    </a>
+</div>
+
+<div>
+    <h4>International Olympic Committee</h4>
+
+    <p>
+        The International Federation of Basque Pelota (FIPV) is fully recognized by the
+        <strong style="color:#fff;">
+            International Olympic Committee (IOC)
+        </strong>.
+    </p>
+
+    <br>
+
+    <a href="https://www.olympics.com/ioc/recognised-international-federations/international-federation-of-pelota-vasca"
+       target="_blank"
+       style="color:#c0392b;font-weight:700;">
+       Visit IOC Website →
+    </a>
+</div>
     </div>
     <div class="footer-bottom">
       <p>© 2026 Pelota Vasca Sport Association of Maharashtra. All rights reserved.</p>
