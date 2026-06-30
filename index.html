@@ -25,10 +25,18 @@ content="Pelota Vasca Sport Association Maharashtra">
   <meta name="description" content="Official website of Pelota Vasca Sport Association of Maharashtra. Frontball — Speed, Skill and Spirit." />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet" />
   <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    body { font-family: 'Inter', sans-serif; background: #fff; color: #1a1a2e; }
-    a { text-decoration: none; }
-    img { display: block; }
+    /* ✅ FIX: Prevent white gaps on scroll end, zoom-out, and screen edges */
+html {
+  min-height: 100%;
+  background: #1a1a2e; /* matches your footer/nav dark color */
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: #fff;
+  color: #1a1a2e;
+  min-height: 100%;
+}
 
     /* NAV */
     nav {
